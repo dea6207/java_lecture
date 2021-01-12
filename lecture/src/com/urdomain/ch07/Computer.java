@@ -1,0 +1,9 @@
+package com.urdomain.ch07;
+
+public class Computer {
+//	@Override
+	double areaCircle(double r) {
+		System.out.println("Computer °´Ã¼ÀÇ areaCircle() ½ÇÇà");
+		return Math.PI * r * r;
+	}
+}
