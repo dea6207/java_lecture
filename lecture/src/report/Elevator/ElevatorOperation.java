@@ -27,134 +27,134 @@ public class ElevatorOperation {
         }
     }
 	
-	//¸ğµ¨1 µ¿ÀÛ
+	//ëª¨ë¸1 ë™ì‘
 	private void OperationModel1() throws Exception {
-		//ÇöÀç Ãş¼ö °¡Á®¿À±â
-		syso("ÇöÀçÃşÀº " + elevator.currentFloor + "ÀÔ´Ï´Ù.");
-		syso("¿Ã¶ó°¡·Á¸é 1, ³»·Á°¡·Á¸é 0À» ÀÔ·ÂÇÏ¼¼¿ä");
+		//í˜„ì¬ ì¸µìˆ˜ ê°€ì ¸ì˜¤ê¸°
+		syso("í˜„ì¬ì¸µì€ " + elevator.currentFloor + "ì…ë‹ˆë‹¤.");
+		syso("ì˜¬ë¼ê°€ë ¤ë©´ 1, ë‚´ë ¤ê°€ë ¤ë©´ 0ì„ ì…ë ¥í•˜ì„¸ìš”");
 		int keyCode = System.in.read();
-		//Å°º¸µå ¡è ´­·¶À»¶§ Ã³¸®
+		//í‚¤ë³´ë“œ â†‘ ëˆŒë €ì„ë•Œ ì²˜ë¦¬
 		if(keyCode == 49 && elevator.currentFloor>0 && (keyCode != 12 && keyCode!=10)) {
-			syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+			syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 			theradSleep(1000);
-			syso("¿Ã¶ó°©´Ï´Ù.");
+			syso("ì˜¬ë¼ê°‘ë‹ˆë‹¤.");
 			theradSleep(1000);
-			syso("Å¾½Â°´ ¼ö¸¦ ÀÔ·Â ÇØÁÖ¼¼¿ä");
+			syso("íƒ‘ìŠ¹ê° ìˆ˜ë¥¼ ì…ë ¥ í•´ì£¼ì„¸ìš”");
 			inputPassengerNum = sc.nextInt();
 			elevator.passenger = inputPassengerNum;
-			//Á¤¿øÀÏ¶§
+			//ì •ì›ì¼ë•Œ
 			if(elevator.passenger <= 20) {
-				syso("¸ñÀûÃşÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+				syso("ëª©ì ì¸µì„ ì…ë ¥í•˜ì„¸ìš”.");
 				elevator.SetFloor();
 				for(int i = elevator.currentFloor; i <= elevator.selectFloor; i++) {
 					if(i != elevator.selectFloor) {
-						syso("¡è" + i + "Ãş");
+						syso("â†‘" + i + "ì¸µ");
 						theradSleep(1000);
 						} else {
-							syso(elevator.selectFloor + "ÃşÀÔ´Ï´Ù.");
+							syso(elevator.selectFloor + "ì¸µì…ë‹ˆë‹¤.");
 							theradSleep(1000);
-							syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+							syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 						}
 					}
 				} else {
-					syso("Á¤¿øÀÌ ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+					syso("ì •ì›ì´ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
 				}
-		} else if(keyCode == 48 && elevator.currentFloor<=20 && (keyCode != 12 && keyCode!=10)){ //Å°º¸µå ¡é ´­·¶À»¶§ Ã³¸®
-			syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+		} else if(keyCode == 48 && elevator.currentFloor<=20 && (keyCode != 12 && keyCode!=10)){ //í‚¤ë³´ë“œ â†“ ëˆŒë €ì„ë•Œ ì²˜ë¦¬
+			syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 			theradSleep(1000);
-			syso("³»·Á°©´Ï´Ù.");
+			syso("ë‚´ë ¤ê°‘ë‹ˆë‹¤.");
 			theradSleep(1000);
-			syso("Å¾½Â°´ ¼ö¸¦ ÀÔ·Â ÇØÁÖ¼¼¿ä");
+			syso("íƒ‘ìŠ¹ê° ìˆ˜ë¥¼ ì…ë ¥ í•´ì£¼ì„¸ìš”");
 			inputPassengerNum = sc.nextInt();
 			elevator.passenger = inputPassengerNum;
-			//Á¤¿øÀÏ¶§
+			//ì •ì›ì¼ë•Œ
 			if(elevator.passenger <= 20) {
-			 	syso("¸ñÀûÃşÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+			 	syso("ëª©ì ì¸µì„ ì…ë ¥í•˜ì„¸ìš”.");
 				elevator.SetFloor();
 				for(int i = elevator.currentFloor; i >= elevator.selectFloor; i--) {
 					if(i != elevator.selectFloor) {
-						syso("¡é" + i + "Ãş");
+						syso("â†“" + i + "ì¸µ");
 						theradSleep(1000);
 					} else {
-						syso(elevator.selectFloor + "ÃşÀÔ´Ï´Ù.");
-						syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+						syso(elevator.selectFloor + "ì¸µì…ë‹ˆë‹¤.");
+						syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 					}
 				}
 			} else {
-				syso("Á¤¿øÀÌ ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+				syso("ì •ì›ì´ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
 			}
 		} else {
-			syso("¿Ã¶ó°¥Áö ³»·Á°¥Áö ¼±ÅÃÇÏ¼¼¿ä.");
+			syso("ì˜¬ë¼ê°ˆì§€ ë‚´ë ¤ê°ˆì§€ ì„ íƒí•˜ì„¸ìš”.");
 		}
 		
 	}
 	
-	//¸ğµ¨2 µ¿ÀÛ
+	//ëª¨ë¸2 ë™ì‘
 		private void OperationModel2() throws Exception {
-			//ÇöÀç Ãş¼ö °¡Á®¿À±â
-			syso("ÇöÀçÃşÀº " + elevator.currentFloor + "ÀÔ´Ï´Ù.");
-			syso("¿Ã¶ó°¡·Á¸é 1, ³»·Á°¡·Á¸é 0À» ÀÔ·ÂÇÏ¼¼¿ä");
+			//í˜„ì¬ ì¸µìˆ˜ ê°€ì ¸ì˜¤ê¸°
+			syso("í˜„ì¬ì¸µì€ " + elevator.currentFloor + "ì…ë‹ˆë‹¤.");
+			syso("ì˜¬ë¼ê°€ë ¤ë©´ 1, ë‚´ë ¤ê°€ë ¤ë©´ 0ì„ ì…ë ¥í•˜ì„¸ìš”");
 			int keyCode = System.in.read();
-			//Å°º¸µå ¡è ´­·¶À»¶§ Ã³¸®
+			//í‚¤ë³´ë“œ â†‘ ëˆŒë €ì„ë•Œ ì²˜ë¦¬
 			if(keyCode == 49 && elevator.currentFloor>0 && (keyCode != 12 && keyCode!=10)) {
-				syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+				syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 				theradSleep(500);
-				syso("¿Ã¶ó°©´Ï´Ù.");
+				syso("ì˜¬ë¼ê°‘ë‹ˆë‹¤.");
 				theradSleep(500);
-				syso("Å¾½Â°´ ¼ö¸¦ ÀÔ·Â ÇØÁÖ¼¼¿ä");
+				syso("íƒ‘ìŠ¹ê° ìˆ˜ë¥¼ ì…ë ¥ í•´ì£¼ì„¸ìš”");
 				inputPassengerNum = sc.nextInt();
 				elevator.passenger = inputPassengerNum;
-				//Á¤¿øÀÏ¶§
+				//ì •ì›ì¼ë•Œ
 				if(elevator.passenger <= 20) {
-					syso("¸ñÀûÃşÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+					syso("ëª©ì ì¸µì„ ì…ë ¥í•˜ì„¸ìš”.");
 					elevator.SetFloor();
 					for(int i = elevator.currentFloor; i <= elevator.selectFloor; i++) {
 						if(i != elevator.selectFloor) {
-							syso("¡è" + i + "Ãş");
+							syso("â†‘" + i + "ì¸µ");
 							theradSleep(500);
 							} else {
-								syso(elevator.selectFloor + "ÃşÀÔ´Ï´Ù.");
+								syso(elevator.selectFloor + "ì¸µì…ë‹ˆë‹¤.");
 								theradSleep(500);
-								syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+								syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 							}
 						}
 					} else {
-						syso("Á¤¿øÀÌ ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+						syso("ì •ì›ì´ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
 					}
-			} else if(keyCode == 48 && elevator.currentFloor<=20 && (keyCode != 12 && keyCode!=10)){ //Å°º¸µå ¡é ´­·¶À»¶§ Ã³¸®
-				syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+			} else if(keyCode == 48 && elevator.currentFloor<=20 && (keyCode != 12 && keyCode!=10)){ //í‚¤ë³´ë“œ â†“ ëˆŒë €ì„ë•Œ ì²˜ë¦¬
+				syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 				theradSleep(500);
-				syso("³»·Á°©´Ï´Ù.");
+				syso("ë‚´ë ¤ê°‘ë‹ˆë‹¤.");
 				theradSleep(500);
-				syso("Å¾½Â°´ ¼ö¸¦ ÀÔ·Â ÇØÁÖ¼¼¿ä");
+				syso("íƒ‘ìŠ¹ê° ìˆ˜ë¥¼ ì…ë ¥ í•´ì£¼ì„¸ìš”");
 				inputPassengerNum = sc.nextInt();
 				elevator.passenger = inputPassengerNum;
-				//Á¤¿øÀÏ¶§
+				//ì •ì›ì¼ë•Œ
 				if(elevator.passenger <= 20) {
-				 	syso("¸ñÀûÃşÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+				 	syso("ëª©ì ì¸µì„ ì…ë ¥í•˜ì„¸ìš”.");
 					elevator.SetFloor();
 					for(int i = elevator.currentFloor; i >= elevator.selectFloor; i--) {
 						if(i != elevator.selectFloor) {
-							syso("¡é" + i + "Ãş");
+							syso("â†“" + i + "ì¸µ");
 							theradSleep(500);
 						} else {
-							syso(elevator.selectFloor + "ÃşÀÔ´Ï´Ù.");
+							syso(elevator.selectFloor + "ì¸µì…ë‹ˆë‹¤.");
 							theradSleep(1000);
-							syso("¹®ÀÌ ¿­¸³´Ï´Ù.");
+							syso("ë¬¸ì´ ì—´ë¦½ë‹ˆë‹¤.");
 						}
 					}
 				} else {
-					syso("Á¤¿øÀÌ ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+					syso("ì •ì›ì´ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
 				}
 			} else {
-				syso("¿Ã¶ó°¥Áö ³»·Á°¥Áö ¼±ÅÃÇÏ¼¼¿ä.");
+				syso("ì˜¬ë¼ê°ˆì§€ ë‚´ë ¤ê°ˆì§€ ì„ íƒí•˜ì„¸ìš”.");
 			}
 			
 		}
 	
 	
 	private int menu() {
-		System.out.println("¸ğµ¨À» ¼±ÅÃÇØ ÁÖ¼¼¿ä");
+		System.out.println("ëª¨ë¸ì„ ì„ íƒí•´ ì£¼ì„¸ìš”");
 		return getNumInput("[1]OTIS [2]hyndai");
 	}
 

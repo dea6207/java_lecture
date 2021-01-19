@@ -4,7 +4,7 @@ public class TitleTest {
 	
 	public static void main(String[] args) {
 		
-		TitleTest contents = new TitleTest("°øÁö", "¶ò±Û ½ºÅå Ã¼ÇèÆÇ ÀÌ·¸°Ô »ç¿ëÇÏ¼¼¿ä~", "¶ó¿Â Á¤´Ş", "2020.09.02.", 255);
+		TitleTest contents = new TitleTest("ê³µì§€", "ëµê¸€ ìŠ¤í†¡ ì²´í—˜íŒ ì´ë ‡ê²Œ ì‚¬ìš©í•˜ì„¸ìš”~", "ë¼ì˜¨ ì •ë‹¬", "2020.09.02.", 255);
 		System.out.println(contents.toString());
 		
 		
